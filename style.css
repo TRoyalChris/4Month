@@ -505,9 +505,9 @@ body, html {
         width: 80px; 
     }
 
-    /* FIX: Lift characters much higher up */
+    /* FIX: Push the containers up to line their feet right up with the blue line */
     .character-container {
-        bottom: 24%; 
+        bottom: 35%; 
     }
 
     .speech-bubble {
@@ -521,9 +521,9 @@ body, html {
     .right-char-1 { right: 24%; }
     .right-char-2 { right: 3%; }
 
-    /* FIX: Adjust button position to match the higher characters */
+    /* FIX: Move the "Todays Adventure..." button slightly higher to match the new character height */
     .adventure-btn {
-        bottom: 58%; 
+        bottom: 66%; 
         font-size: 1.1rem;
         padding: 12px 24px;
         transform: translateX(-50%) scale(1);
