@@ -505,9 +505,8 @@ body, html {
         width: 80px; 
     }
 
-    /* FIX: Push the containers up to line their feet right up with the blue line */
     .character-container {
-        bottom: 35%; 
+        bottom: 35px; 
     }
 
     .speech-bubble {
@@ -517,11 +516,11 @@ body, html {
         margin-bottom: 6px;
     }
 
+    /* Adjusted horizontal placements for the new order */
     .left-char { left: 3%; }
-    .right-char-1 { right: 24%; }
-    .right-char-2 { right: 3%; }
+    .right-char-1 { right: 28%; } /* Pomni (inner right) */
+    .right-char-2 { right: 3%; }  /* Jax (far right) */
 
-    /* FIX: Move the "Todays Adventure..." button slightly higher to match the new character height */
     .adventure-btn {
         bottom: 66%; 
         font-size: 1.1rem;
@@ -529,14 +528,13 @@ body, html {
         transform: translateX(-50%) scale(1);
     }
 
-    /* Pomni's speech bubble pointer flip */
-    .right-char-2 .speech-bubble {
-        text-align: left;
+    /* Reset speech bubble alignment back to normal since Pomni is now on the inner side */
+    .right-char-1 .speech-bubble {
+        text-align: right;
     }
-    
-    .right-char-2 .speech-bubble::after {
-        left: 80%;
-        right: auto;
+    .right-char-1 .speech-bubble::after {
+        left: auto;
+        right: 40px;
     }
 
     .open-btn {
