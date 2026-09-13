@@ -423,20 +423,21 @@ body, html {
 
 /* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
 /* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
+/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
 @media (max-width: 768px) {
     .buttons-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.6rem; }
     .theme-btn { font-size: 1rem; padding: 10px 15px; }
     .btn-img { width: 45px; height: 45px; }
 
-    /* 1. Scale down characters slightly so they fit side-by-side */
+    /* Scale down characters slightly so they fit comfortably */
     .character-img {
         width: 75px; 
     }
 
-    /* 2. Position speech bubbles higher up so they don't clash with the center button */
+    /* Keep character containers positioned nicely */
     .character-container {
-        bottom: 18%;
+        bottom: 22%; /* Lifted up slightly */
     }
 
     .speech-bubble {
@@ -449,16 +450,26 @@ body, html {
     /* Tighter mobile horizontal spacing for the 3 characters */
     .left-char { left: 3%; }
     .right-char-1 { right: 24%; }
-    .right-char-2 { right: 2%; }
+    .right-char-2 { right: 3%; }
 
-    /* 3. Ensure the "Todays Adventure" button sits cleanly below the speech bubbles */
+    /* FIX 1: Move "Todays Adventure..." higher up toward the center */
     .adventure-btn {
-        bottom: 8%;
+        bottom: 45%; /* Moved up into the middle area above characters */
         font-size: 1.1rem;
-        padding: 10px 20px;
+        padding: 12px 24px;
     }
 
-    /* 4. Fix the initial "Start the show" curtain button to be dead-center and fully visible */
+    /* FIX 2: Flip the farthest right character's (Pomni's) speech bubble pointer to the right */
+    .right-char-2 .speech-bubble {
+        text-align: left;
+    }
+    
+    .right-char-2 .speech-bubble::after {
+        left: 80%; /* Moves the little triangle pointer to the right side of the bubble */
+        right: auto;
+    }
+
+    /* Fix the initial "Start the show" curtain button to be dead-center */
     .open-btn {
         bottom: 25% !important;
         left: 50% !important;
@@ -466,7 +477,7 @@ body, html {
         font-size: 1.1rem;
         padding: 12px 26px;
         white-space: nowrap;
-        z-index: 50; /* Ensures it stays on top of closed curtains */
+        z-index: 50;
     }
 }
 
