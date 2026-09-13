@@ -354,9 +354,24 @@ body, html {
 .penguin-img { width: 50px; height: auto; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.7)); animation: waddle 2.5s infinite ease-in-out; }
 .penguins-container .penguin-img:nth-child(2) { animation-delay: 0.5s; width: 55px; }
 @keyframes waddle { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-6px) rotate(4deg); } }
-.arctic-content { position: relative; z-index: 10; text-align: center; background: rgba(2, 17, 35, 0.88); border: 3px solid #00b4d8; padding: 30px; border-radius: 12px; width: 85%; max-width: 520px; color: #e0fbfc; box-shadow: 0 15px 40px rgba(0,0,0,0.85); }
-.arctic-content h2 { color: #90e0ef; font-size: 1.8rem; margin-bottom: 15px; }
-.arctic-content p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.5; color: #ade8f4; }
+
+/* SCROLLABLE LETTER CARDS */
+.arctic-content, .jungle-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    background: rgba(2, 17, 35, 0.92);
+    border: 3px solid #00b4d8;
+    padding: 25px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 520px;
+    max-height: 75vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+}
+.arctic-content h2 { color: #90e0ef; font-size: 1.5rem; margin-bottom: 12px; }
+.arctic-content p { font-size: 1rem; margin-bottom: 20px; line-height: 1.5; color: #ade8f4; }
 
 /* JUNGLE VIEW */
 .jungle-view {
@@ -371,9 +386,13 @@ body, html {
 .stego-2 { width: 140px; bottom: 8%; animation: walkStegoReverse 22s infinite linear; opacity: 0.85; }
 @keyframes walkStego { 0% { left: -25%; transform: translateY(0) scaleX(1); } 50% { transform: translateY(4px) scaleX(1); } 100% { left: 110%; transform: translateY(0) scaleX(1); } }
 @keyframes walkStegoReverse { 0% { right: -25%; left: auto; transform: translateY(3px) scaleX(-1); } 50% { transform: translateY(-3px) scaleX(-1); } 100% { right: 110%; left: auto; transform: translateY(0) scaleX(-1); } }
-.jungle-content { position: relative; z-index: 10; text-align: center; background: rgba(15, 26, 17, 0.9); border: 3px solid #606c38; padding: 30px; border-radius: 12px; width: 85%; max-width: 520px; color: #fefae0; box-shadow: 0 15px 40px rgba(0,0,0,0.85); }
-.jungle-content h2 { color: #dda15e; font-size: 1.8rem; margin-bottom: 15px; }
-.jungle-content p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.5; color: #ccd5ae; }
+
+.jungle-content {
+    background: rgba(15, 26, 17, 0.95);
+    border: 3px solid #606c38;
+}
+.jungle-content h2 { color: #dda15e; font-size: 1.5rem; margin-bottom: 12px; }
+.jungle-content p { font-size: 1rem; margin-bottom: 20px; line-height: 1.5; color: #ccd5ae; }
 
 /* DATE NIGHT VIEW (Section 3) */
 .datenight-view {
@@ -389,13 +408,17 @@ body, html {
 .datenight-title { color: #ffcc00; font-size: 2rem; margin-bottom: 15px; }
 .datenight-img {
     width: 100%;
-    max-height: 350px; /* Allows taller photos to fit comfortably */
-    object-fit: contain; /* Ensures the FULL photo is shown without cropping */
-    background-color: #0d041a; /* Adds a nice backdrop if your photo has a different shape */
+    max-height: 350px;
+    object-fit: contain;
+    background-color: #0d041a;
     border-radius: 10px;
     border: 3px solid #fff;
-    margin-bottom: 15px;
-}.datenight-text { font-size: 1.1rem; margin-bottom: 20px; color: #ffed99; }
+    margin-bottom: 10px;
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+.datenight-img:hover { transform: scale(1.02); }
+.datenight-text { font-size: 1.1rem; margin-bottom: 20px; color: #ffed99; }
 
 /* REASONS WHY I LOVE YOU VIEW (Section 4) */
 .reasons-view {
@@ -421,71 +444,11 @@ body, html {
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
-/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
-/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
-@media (max-width: 768px) {
-    .buttons-grid { grid-template-columns: 1fr; }
-    .section-title { font-size: 1.6rem; }
-    .theme-btn { font-size: 1rem; padding: 10px 15px; }
-    .btn-img { width: 45px; height: 45px; }
-
-    /* Scale down characters slightly so they fit comfortably */
-    .character-img {
-        width: 75px; 
-    }
-
-    /* Keep character containers positioned nicely */
-    .character-container {
-        bottom: 22%; /* Lifted up slightly */
-    }
-
-    .speech-bubble {
-        font-size: 0.75rem;
-        padding: 6px 10px;
-        max-width: 110px;
-        margin-bottom: 8px;
-    }
-
-    /* Tighter mobile horizontal spacing for the 3 characters */
-    .left-char { left: 3%; }
-    .right-char-1 { right: 24%; }
-    .right-char-2 { right: 3%; }
-
-    /* FIX 1: Move "Todays Adventure..." higher up toward the center */
-    .adventure-btn {
-        bottom: 45%; /* Moved up into the middle area above characters */
-        font-size: 1.1rem;
-        padding: 12px 24px;
-    }
-
-    /* FIX 2: Flip the farthest right character's (Pomni's) speech bubble pointer to the right */
-    .right-char-2 .speech-bubble {
-        text-align: left;
-    }
-    
-    .right-char-2 .speech-bubble::after {
-        left: 80%; /* Moves the little triangle pointer to the right side of the bubble */
-        right: auto;
-    }
-
-    /* Fix the initial "Start the show" curtain button to be dead-center */
-    .open-btn {
-        bottom: 25% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        font-size: 1.1rem;
-        padding: 12px 26px;
-        white-space: nowrap;
-        z-index: 50;
-    }
-}
-
 /* Hint text under the photo */
 .click-hint {
     font-size: 0.85rem;
     color: #ffcc00;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     opacity: 0.8;
 }
 
@@ -531,12 +494,57 @@ body, html {
     cursor: pointer;
 }
 
-/* Make sure the thumbnail cursor shows it's clickable */
-.datenight-img {
-    cursor: zoom-in;
-    transition: transform 0.2s;
-}
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .buttons-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.6rem; }
+    .theme-btn { font-size: 1rem; padding: 10px 15px; }
+    .btn-img { width: 45px; height: 45px; }
 
-.datenight-img:hover {
-    transform: scale(1.02);
+    .character-img {
+        width: 75px; 
+    }
+
+    .character-container {
+        bottom: 26px;
+    }
+
+    .speech-bubble {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        max-width: 110px;
+        margin-bottom: 6px;
+    }
+
+    .left-char { left: 3%; }
+    .right-char-1 { right: 24%; }
+    .right-char-2 { right: 3%; }
+
+    /* PUSH BUTTON HIGHER UP SO IT DOES NOT OVERLAP SPEECH BUBBLES */
+    .adventure-btn {
+        bottom: 65%;
+        font-size: 1.1rem;
+        padding: 12px 24px;
+        transform: translateX(-50%) scale(1);
+    }
+
+    /* Pomni's speech bubble pointer flip */
+    .right-char-2 .speech-bubble {
+        text-align: left;
+    }
+    
+    .right-char-2 .speech-bubble::after {
+        left: 80%;
+        right: auto;
+    }
+
+    .open-btn {
+        bottom: 25% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 1.1rem;
+        padding: 12px 26px;
+        white-space: nowrap;
+        z-index: 50;
+    }
 }
