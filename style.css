@@ -495,6 +495,7 @@ body, html {
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .buttons-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.6rem; }
@@ -505,8 +506,9 @@ body, html {
         width: 80px; 
     }
 
+    /* LOCKED: Sits them right up on the blue line */
     .character-container {
-        bottom: 35px; 
+        bottom: 30vh; 
     }
 
     .speech-bubble {
@@ -516,10 +518,10 @@ body, html {
         margin-bottom: 6px;
     }
 
-    /* Adjusted horizontal placements for the new order */
+    /* Correct order spacing: Left, Pomni (inner right), Jax (far right) */
     .left-char { left: 3%; }
-    .right-char-1 { right: 28%; } /* Pomni (inner right) */
-    .right-char-2 { right: 3%; }  /* Jax (far right) */
+    .right-char-1 { right: 28%; } 
+    .right-char-2 { right: 3%; }  
 
     .adventure-btn {
         bottom: 66%; 
@@ -528,7 +530,6 @@ body, html {
         transform: translateX(-50%) scale(1);
     }
 
-    /* Reset speech bubble alignment back to normal since Pomni is now on the inner side */
     .right-char-1 .speech-bubble {
         text-align: right;
     }
