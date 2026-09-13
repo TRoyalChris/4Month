@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Months Anniversary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Stage / Opening Section -->
+    <section class="stage-section">
+        <div class="stage">
+            <!-- Background Circus Sunburst & Stage Floor -->
+            <div class="backstage">
+                <div class="sunburst-bg"></div>
+                <div class="wooden-stage-floor"></div>
+                
+                <!-- Character 1 (Left) -->
+                <div class="character-container left-char">
+                    <div class="speech-bubble">
+                        <!-- Write your Section 1 letter/message here directly -->
+                        4 Months, now that's what i call the spirit of love ! <br>(Or atleast i think so) <br>
+                    </div>
+                    <img src="imagenes/Personaje.webp" alt="Character 1" class="character-img">
+                </div>
+
+                <!-- Character 2 (Right Side - Inner) -->
+                <div class="character-container right-char-1">
+                    <div class="speech-bubble">
+                        Ughh, all this "love" , i'm outta here!
+                    </div>
+                    <img src="imagenes/Jax_Render.webp" alt="Character 2" class="character-img">
+                </div>
+
+                <!-- Character 3 (Right Side - Outer) -->
+                <div class="character-container right-char-2">
+                    <div class="speech-bubble">
+                        Don't be so negative <br> it's beautiful! <br>
+                       
+                    </div>
+                    <img src="imagenes/Pomni.png" alt="Character 3" class="character-img">
+                </div>
+
+                <!-- Todays Adventure Button -->
+                <button class="adventure-btn" id="adventureBtn">Todays Adventure...</button>
+            </div>
+
+            <!-- Realistic Curtains -->
+            <div class="curtain left-curtain" id="leftCurtain"></div>
+            <div class="curtain right-curtain" id="rightCurtain"></div>
+            <div class="valance-top"></div>
+
+            <!-- Open Button -->
+            <button class="open-btn" id="openBtn">Start the show✨</button>
+
+            <!-- Background Music Player -->
+            <audio id="bgMusic" loop>
+                <source src="audio/circus-music.mp3" type="audio/mp3">
+            </audio>
+
+            <!-- Floating Music Control Button -->
+            <button class="music-btn" id="musicBtn" title="Toggle Music">🎵</button>
+        </div>
+    </section>
+
+    <!-- Section 2: Four Month Adventures Menu -->
+    <section class="adventure-section" id="adventureSection">
+        <div class="sunburst-bg"></div>
+        <div class="wooden-stage-floor"></div>
+
+        <div class="adventure-content">
+            <h2 class="section-title">Come on, choose one, it won't bite...</h2>
+            
+            <div class="buttons-grid">
+                <button class="theme-btn" onclick="openTheme('arctic')">
+                    <img src="imagenes/arctic-thumb.webp" alt="Arctic Ocean" class="btn-img">
+                    <span>Arctic</span>
+                </button>
+                <button class="theme-btn" onclick="openTheme('dino')">
+                    <img src="imagenes/dino-thumb.webp" alt="Prehistoric Jungle" class="btn-img">
+                    <span>Prehistoric Jungle</span>
+                </button>
+                <button class="theme-btn" onclick="openTheme('fairy')">
+                    <img src="imagenes/fairy-thumb.webp" alt="Date Night" class="btn-img">
+                    <span>Date Night</span>
+                </button>
+                <button class="theme-btn" onclick="openTheme('pandora')">
+                    <img src="imagenes/pandora-thumb.jpg" alt="Razones" class="btn-img">
+                    <span>Why I Love You</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Arctic Ocean Immersive View -->
+    <div class="arctic-view" id="arcticView">
+        <div class="arctic-bg">
+            <div class="glacier glacier-1"></div>
+            <div class="glacier glacier-2"></div>
+            <div class="water-overlay"></div>
+        </div>
+        <div class="bubbles-container">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        <div class="penguins-container">
+            <img src="imagenes/artic/penguin1.png" alt="Penguin" class="penguin-img">
+            <img src="imagenes/artic/penguin2.webp" alt="Penguin" class="penguin-img">
+        </div>
+        <div class="orcas-container">
+            <img src="imagenes/artic/orca1.png" alt="Orca" class="orca">
+            <img src="imagenes/artic/orca2.webp" alt="Orca" class="orca orca-img-2">
+        </div>
+        <div class="arctic-content">
+            <h2>❄️💙Impossible not to love you 💙❄️</h2>
+            <!-- Write your Section 2 letter for Arctic here -->
+            <p>"Swimming through icy waters and snowy peaks, just like my favorite adventure with you."</p>
+            <button class="back-to-menu-btn" onclick="closeArcticView()"> Back to Adventures</button>
+        </div>
+        <audio id="arcticMusic" loop><source src="audio/arctic-song.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <!-- 2. Prehistoric Jungle Immersive View -->
+    <div class="jungle-view" id="jungleView">
+        <img src="imagenes/jungle/jungle-bg.png" alt="Prehistoric Jungle Background" class="jungle-bg-img">
+        <div class="dinos-container">
+            <img src="imagenes/jungle/stego1.webp" alt="Stegosaurus" class="stego-img stego-1">
+            <img src="imagenes/jungle/stego2.webp" alt="Stegosaurus" class="stego-img stego-2">
+        </div>
+        <div class="jungle-content">
+            <h2>💚🦖Thanks for loving me 🦕💚</h2>
+            <!-- Write your Section 2 letter for Jungle here -->
+            <p>"Wandering through ancient, rain-soaked swamps and giant prehistoric ferns side-by-side with our gentle friends."</p>
+            <button class="back-to-menu-btn" onclick="closeJungleView()">🔙 Back to Adventures</button>
+        </div>
+        <audio id="jungleMusic" loop><source src="audio/jungle-song.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <!-- 3. Date Night View (Button 3) -->
+    <div class="datenight-view" id="dateNightView">
+        <div class="datenight-card">
+            <h2 class="datenight-title">Date Night</h2>
+            <!-- Added id and onclick event to trigger full screen -->
+            <img src="imagenes/fairy/date-photo.png" alt="Date Night" class="datenight-img" id="dateNightImg" onclick="openFullscreenPhoto()">
+            <p class="click-hint">🔍 Click photo to view full screen</p>
+            <p class="datenight-text">💜💛The plan for our virtual date💛💜</p>
+            <button class="back-to-menu-btn" onclick="closeDateNightView()">🔙 Back to Adventures</button>
+        </div>
+        <audio id="fairyMusic" loop><source src="audio/fairy-song.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <!-- Fullscreen Lightbox Modal for Photo -->
+    <div class="photo-lightbox" id="photoLightbox" onclick="closeFullscreenPhoto()">
+        <span class="close-lightbox">&times;</span>
+        <img src="imagenes/fairy/date-photo.png" alt="Date Night Fullscreen" id="lightboxImg">
+    </div>
+
+    <!-- 4. Razones por las cuales te Amo View (Button 4) -->
+    <div class="reasons-view" id="reasonsView">
+        <div class="reasons-card">
+            <h2>💜❤️I love you ❤️💜</h2>
+            <ul class="reasons-list">
+                <li>✨ You have the most beautiful smile</li>
+                <li>✨ Your eyes are beautiful</li>
+                <li>✨ I adore you</li>
+                <li>✨ Your personality is incredible</li>
+                <li>✨ You always know how to make me laugh</li>
+                <li>✨ You are my best friend</li>
+                <li>✨ You are my everything</li>
+                <li>✨ You are everything I ever dreamt of</li> 
+                <li>✨ You have a beautiful sense of humor</li>
+                <li>✨ You are my favorite artist</li>
+                <li>✨ You are my soulmate</li>
+                <li>✨ The way you love me</li>
+                <li>✨ You are sincere with everything</li>
+                <li>✨ Your body is perfect</li>
+                <li>✨ The best chef</li>
+                <li>✨ I love spending time with you</li>
+                <li>✨ I love playing with you</li>
+                <li>✨ You are always helping me</li>
+                <li>✨ You are perfect</li>
+                <li>✨ The most beautiful woman</li>
+                <li>✨ Love your creativity</li>
+                <li>✨ The woman I want to marry</li>
+                <li>✨ My darling, you are the love of my life</li>
+                <li>✨ My Cutiepie</li>
+                <li>✨ My future</li>
+                <li>✨ The future mother of our children</li>
+
+
+            </ul>
+            <button class="back-to-menu-btn" onclick="closeReasonsView()">🔙 Back to Adventures</button>
+        </div>
+        <audio id="pandoraMusic" loop><source src="audio/pandora-song.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
