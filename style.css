@@ -421,12 +421,55 @@ body, html {
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
+/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
+/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
 @media (max-width: 768px) {
     .buttons-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.6rem; }
     .theme-btn { font-size: 1rem; padding: 10px 15px; }
     .btn-img { width: 45px; height: 45px; }
+
+    /* 1. Scale down characters slightly so they fit side-by-side */
+    .character-img {
+        width: 75px; 
+    }
+
+    /* 2. Position speech bubbles higher up so they don't clash with the center button */
+    .character-container {
+        bottom: 18%;
+    }
+
+    .speech-bubble {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        max-width: 110px;
+        margin-bottom: 8px;
+    }
+
+    /* Tighter mobile horizontal spacing for the 3 characters */
+    .left-char { left: 3%; }
+    .right-char-1 { right: 24%; }
+    .right-char-2 { right: 2%; }
+
+    /* 3. Ensure the "Todays Adventure" button sits cleanly below the speech bubbles */
+    .adventure-btn {
+        bottom: 8%;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    /* 4. Fix the initial "Start the show" curtain button to be dead-center and fully visible */
+    .open-btn {
+        bottom: 25% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 1.1rem;
+        padding: 12px 26px;
+        white-space: nowrap;
+        z-index: 50; /* Ensures it stays on top of closed curtains */
+    }
 }
+
 /* Hint text under the photo */
 .click-hint {
     font-size: 0.85rem;
