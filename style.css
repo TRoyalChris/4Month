@@ -495,6 +495,7 @@ body, html {
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .buttons-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 1.6rem; }
@@ -502,11 +503,12 @@ body, html {
     .btn-img { width: 45px; height: 45px; }
 
     .character-img {
-        width: 75px; 
+        width: 80px; /* Gives them a nice clear size */
     }
 
+    /* FIX: Lift characters back up so they are fully on screen */
     .character-container {
-        bottom: 26px;
+        bottom: 15%; 
     }
 
     .speech-bubble {
@@ -520,9 +522,9 @@ body, html {
     .right-char-1 { right: 24%; }
     .right-char-2 { right: 3%; }
 
-    /* PUSH BUTTON HIGHER UP SO IT DOES NOT OVERLAP SPEECH BUBBLES */
+    /* FIX: Place the button nicely in the middle above the characters */
     .adventure-btn {
-        bottom: 65%;
+        bottom: 52%; 
         font-size: 1.1rem;
         padding: 12px 24px;
         transform: translateX(-50%) scale(1);
